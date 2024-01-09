@@ -1,0 +1,52 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="control-container">
+    <label for="username">Username</label>
+    <input id="username" formControlName="username" type="text">
+    <div class="errors-list" *ngIf="registerForm.get('username')?.invalid && (registerForm.get('?username')?.dirty || registerForm.get('username')?.touched)">
+
+    </div>
+  </div>
+  <div class="control-container">
+    <label for="firstName">First Name</label>
+    <input id="firstName" formControlName="firstName" type="text">
+    <div class="errors-list" *ngIf="registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
+
+    </div>
+  </div>
+  <div class="control-container">
+    <label for="secondName">Second Name</label>
+    <input id="secondName" formControlName="secondName" type="text">
+    <div class="errors-list" *ngIf="registerForm.get('secondName')?.invalid && (registerForm.get('secondName')?.dirty || registerForm.get('secondName')?.touched)">
+
+    </div>
+  </div>
+  <div class="control-container">
+    <label for="surname">Surname</label>
+    <input id="surname" formControlName="surname" type="text">
+    <div class="errors-list" *ngIf="registerForm.get('surname')?.invalid && (registerForm.get('surname')?.dirty || registerForm.get('surname')?.touched)">
+
+    </div>
+  </div>
+  <div class="control-container">
+    <label for="secondSurname">Second Surname</label>
+    <input id="secondSurname" formControlName="secondSurname" type="text">
+    <div class="errors-list" *ngIf="registerForm.get('secondSurname')?.invalid && (registerForm.get('secondSurname')?.dirty || registerForm.get('secondSurname')?.touched)">
+
+    </div>
+  </div>
+  <div class="control-container">
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email">
+    <div class="errors-list" *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+
+    </div>
+  </div>
+  <div class="control-container">
+    <label for="password">Password</label>
+    <input id="password" formControlName="password" type="password">
+    <div class="errors-list" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+
+    </div>
+  </div>
+  <button>Submit</button>
+</form>
