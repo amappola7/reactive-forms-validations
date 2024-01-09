@@ -14,9 +14,9 @@ export class RegisterFormComponent {
       {
         username: ['', [Validators.required, Validators.min(4)]],
         firstName: ['', [Validators.required, Validators.max(80), Validators.pattern('/^[a-zA-Z]+$/')]],
-        secondName: ['', Validators.max(80), Validators.pattern('/^[a-zA-Z]+$/')],
+        secondName: ['', [Validators.max(80), Validators.pattern('/^[a-zA-Z]+$/')]],
         surname: ['', [Validators.required, Validators.max(80), Validators.pattern('/^[a-zA-Z]+$/')]],
-        secondSurname: ['', Validators.max(80), Validators.pattern('/^[a-zA-Z]+$/')],
+        secondSurname: ['', [Validators.max(80), Validators.pattern('/^[a-zA-Z]+$/')]],
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.min(6), Validators.pattern('/^[A-Za-z\d#$%&-_.]+$/')]],
       }

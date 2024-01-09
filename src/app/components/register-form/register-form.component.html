@@ -3,49 +3,59 @@
     <label for="username">Username</label>
     <input id="username" formControlName="username" type="text">
     <div class="errors-list" *ngIf="registerForm.get('username')?.invalid && (registerForm.get('?username')?.dirty || registerForm.get('username')?.touched)">
-
+      <span *ngIf="registerForm.get('username')?.hasError('required')">Username is required</span>
+      <span *ngIf="registerForm.get('username')?.hasError('minlength')">Username has to have at least 4 characters</span>
     </div>
   </div>
   <div class="control-container">
     <label for="firstName">First Name</label>
     <input id="firstName" formControlName="firstName" type="text">
     <div class="errors-list" *ngIf="registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
-
+      <span *ngIf="registerForm.get('firstName')?.hasError('required')">First name is required</span>
+      <span *ngIf="registerForm.get('firstName')?.hasError('maxlength')">First name can have a maximum of 80 characters</span>
+      <span *ngIf="registerForm.get('firstName')?.hasError('pattern')">Just letters are allowed</span>
     </div>
   </div>
   <div class="control-container">
     <label for="secondName">Second Name</label>
     <input id="secondName" formControlName="secondName" type="text">
     <div class="errors-list" *ngIf="registerForm.get('secondName')?.invalid && (registerForm.get('secondName')?.dirty || registerForm.get('secondName')?.touched)">
-
+      <span *ngIf="registerForm.get('secondName')?.hasError('maxlength')">Second name can have a maximum of 80 characters</span>
+      <span *ngIf="registerForm.get('secondName')?.hasError('pattern')">Just letters are allowed</span>
     </div>
   </div>
   <div class="control-container">
     <label for="surname">Surname</label>
     <input id="surname" formControlName="surname" type="text">
     <div class="errors-list" *ngIf="registerForm.get('surname')?.invalid && (registerForm.get('surname')?.dirty || registerForm.get('surname')?.touched)">
-
+      <span *ngIf="registerForm.get('surname')?.hasError('required')">Surname is required</span>
+      <span *ngIf="registerForm.get('surname')?.hasError('maxlength')">Surname can have a maximum of 80 characters</span>
+      <span *ngIf="registerForm.get('surname')?.hasError('pattern')">Just letters are allowed</span>
     </div>
   </div>
   <div class="control-container">
     <label for="secondSurname">Second Surname</label>
     <input id="secondSurname" formControlName="secondSurname" type="text">
     <div class="errors-list" *ngIf="registerForm.get('secondSurname')?.invalid && (registerForm.get('secondSurname')?.dirty || registerForm.get('secondSurname')?.touched)">
-
+      <span *ngIf="registerForm.get('secondSurname')?.hasError('maxlength')">Second surname can have a maximum of 80 characters</span>
+      <span *ngIf="registerForm.get('secondSurname')?.hasError('pattern')">Just letters are allowed</span>
     </div>
   </div>
   <div class="control-container">
     <label for="email">Email</label>
     <input id="email" formControlName="email" type="email">
     <div class="errors-list" *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
-
+      <span *ngIf="registerForm.get('email')?.hasError('required')">Email is required</span>
+      <span *ngIf="registerForm.get('email')?.hasError('email')">Invalid email</span>
     </div>
   </div>
   <div class="control-container">
     <label for="password">Password</label>
     <input id="password" formControlName="password" type="password">
     <div class="errors-list" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
-
+      <span *ngIf="registerForm.get('password')?.hasError('required')">Password is required</span>
+      <span *ngIf="registerForm.get('password')?.hasError('minlength')">Password has to have at least 6 characters</span>
+      <span *ngIf="registerForm.get('password')?.hasError('pattern')">Invalid characters, you can only use letters, digits and #$%&-_.</span>
     </div>
   </div>
   <button>Submit</button>
