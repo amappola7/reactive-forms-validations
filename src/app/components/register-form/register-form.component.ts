@@ -7,7 +7,8 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { UserService } from 'src/app/user.service';
+import { UserService } from 'src/app/services/user.service';
+import { userMapper } from 'src/app/utils/user-mapper';
 
 @Component({
   selector: 'app-register-form',
@@ -56,7 +57,9 @@ export class RegisterFormComponent {
   onSubmit() {
     if (this.registerForm.valid) {
       console.log('Successfully registered', this.registerForm.value);
+      this.userService.addUser(userMapper(this.registerForm.value));
       this.registerForm.reset();
+      console.log(this.userService.getUsers());
     } else {
       console.log('Invalid form', this.registerForm.value);
     }
